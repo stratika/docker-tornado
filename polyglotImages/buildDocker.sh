@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-TAG_VERSION=0.15.2-dev
+TAG_VERSION=fosdem2024
 
 function buildDockerImage() {
     IMAGE=$1
     FILE=$2
-    docker build -t $IMAGE -f $FILE .
+    docker build --no-cache -t $IMAGE -f $FILE .
     docker tag $IMAGE beehivelab/$IMAGE:$TAG_VERSION
-    docker tag $IMAGE beehivelab/$IMAGE:latest
 }
 
 
