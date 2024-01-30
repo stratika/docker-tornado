@@ -5,7 +5,7 @@ TAG_VERSION=fosdem2024
 function buildDockerImage() {
     IMAGE=$1
     FILE=$2
-    docker build --no-cache -t $IMAGE -f $FILE .
+    docker build -t $IMAGE -f $FILE .
     docker tag $IMAGE beehivelab/$IMAGE:$TAG_VERSION
 }
 
